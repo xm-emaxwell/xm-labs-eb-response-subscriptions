@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<IncidentTemplatePackage>
+  <importerOrgId>0</importerOrgId>
+  <importerId>0</importerId>
+  <resourceBundleId>0</resourceBundleId>
+  <variables>
+    <variable varType="Textbox">
+      <name><![CDATA[MS Teams - Toll Number]]></name>
+      <toolTip><![CDATA[]]></toolTip>
+      <extProperties>
+        <maxLength>260</maxLength>
+      </extProperties>
+    </variable>
+    <variable varType="Textbox">
+      <name><![CDATA[MS Teams - Conference ID]]></name>
+      <toolTip><![CDATA[]]></toolTip>
+      <extProperties>
+        <maxLength>260</maxLength>
+      </extProperties>
+    </variable>
+    <variable varType="Textarea">
+      <name><![CDATA[MS Teams - Subject]]></name>
+      <toolTip><![CDATA[]]></toolTip>
+      <extProperties>
+        <rows>10</rows>
+        <cols>200</cols>
+      </extProperties>
+    </variable>
+    <variable varType="Textbox">
+      <name><![CDATA[MS Teams - Toll Free Number]]></name>
+      <toolTip><![CDATA[]]></toolTip>
+      <extProperties>
+        <maxLength>260</maxLength>
+      </extProperties>
+    </variable>
+    <variable varType="Textbox">
+      <name><![CDATA[MS Teams - Join URL]]></name>
+      <toolTip><![CDATA[]]></toolTip>
+      <extProperties>
+        <maxLength>399</maxLength>
+      </extProperties>
+    </variable>
+    <variable varType="Textbox">
+      <name><![CDATA[MS Teams - Meeting ID]]></name>
+      <toolTip><![CDATA[]]></toolTip>
+      <extProperties>
+        <maxLength>260</maxLength>
+      </extProperties>
+    </variable>
+    <variable varType="Textbox">
+      <name><![CDATA[MS Teams - Dial-in Information URL]]></name>
+      <toolTip><![CDATA[]]></toolTip>
+      <extProperties>
+        <maxLength>399</maxLength>
+      </extProperties>
+    </variable>
+  </variables>
+  <incidentTemplates>
+    <incidentTemplate>
+      <_class>com.everbridge.platform.matrix.model.IncidentTemplate</_class>
+      <id>3096916233551918</id>
+      <name><![CDATA[Incident to xM Workflow Example]]></name>
+      <status>A</status>
+      <phaseTemplates>
+        <phaseTemplate>
+          <id>1</id>
+          <name><![CDATA[New]]></name>
+          <formTemplateIEVO>
+            <subject><![CDATA[Trigger xMatters Workflow]]></subject>
+            <postMessage><![CDATA[]]></postMessage>
+            <preMessage><![CDATA[This is the initial notification, but should not actually go out to users. If it does then the template was not configured correctly.]]></preMessage>
+            <sysVarTodayDateFormat><![CDATA[mm-dd-yyyy]]></sysVarTodayDateFormat>
+            <sysVarCurrentTimeFormat><![CDATA[hh:mm a]]></sysVarCurrentTimeFormat>
+            <formVariableItemIEVOs/>
+          </formTemplateIEVO>
+          <broadcastTemplateIEVO>
+            <enableLifeSafety>false</enableLifeSafety>
+            <priority>NonPriority</priority>
+            <type>Standard</type>
+            <broadcastSettingsIEVO>
+              <voiceMailOption>MESSAGE_ONLY</voiceMailOption>
+            </broadcastSettingsIEVO>
+            <broadcastMessageIEVO>
+              <textMessage><![CDATA[{reference to notification.message.textMessage}]]></textMessage>
+              <title><![CDATA[Trigger xMatters Workflow]]></title>
+              <contentType>Text</contentType>
+              <useCustomEmail>false</useCustomEmail>
+              <rtfContent><![CDATA[]]></rtfContent>
+              <rtfEditorVersion>tinymce</rtfEditorVersion>
+              <conferenceBridgeId>0</conferenceBridgeId>
+              <questionaire/>
+              <useCustomSms>false</useCustomSms>
+            </broadcastMessageIEVO>
+          </broadcastTemplateIEVO>
+          <ignoreVariable>true</ignoreVariable>
+          <phaseDefinitions>
+            <phaseDefinition>
+              <id>1001</id>
+              <name>New</name>
+            </phaseDefinition>
+          </phaseDefinitions>
+        </phaseTemplate>
+        <phaseTemplate>
+          <id>2</id>
+          <name><![CDATA[Updated | Closed]]></name>
+          <formTemplateIEVO>
+            <subject><![CDATA[Notification Triggered by xM]]></subject>
+            <postMessage><![CDATA[]]></postMessage>
+            <preMessage><![CDATA[Triggered by the xMatters workflow. Check email or app notification for more detail.]]></preMessage>
+            <sysVarTodayDateFormat><![CDATA[mm-dd-yyyy]]></sysVarTodayDateFormat>
+            <sysVarCurrentTimeFormat><![CDATA[hh:mm a]]></sysVarCurrentTimeFormat>
+            <formVariableItemIEVOs>
+              <formVariableItemIEVO seq="1" isRequired="false" isSys="true">
+                <variableName><![CDATA[Notification Status]]></variableName>
+                <vals>
+                  <val><![CDATA[{phaseStatus}]]></val>
+                </vals>
+              </formVariableItemIEVO>
+              <formVariableItemIEVO seq="2" isRequired="false" isSys="true">
+                <variableName><![CDATA[Today's Date]]></variableName>
+                <vals>
+                  <val><![CDATA[{date}]]></val>
+                </vals>
+              </formVariableItemIEVO>
+              <formVariableItemIEVO seq="3" isRequired="false" isSys="true">
+                <variableName><![CDATA[Current Time]]></variableName>
+                <vals>
+                  <val><![CDATA[{time}]]></val>
+                </vals>
+              </formVariableItemIEVO>
+              <formVariableItemIEVO seq="4" isRequired="false" isSys="false">
+                <variableName><![CDATA[MS Teams - Conference ID]]></variableName>
+              </formVariableItemIEVO>
+              <formVariableItemIEVO seq="5" isRequired="false" isSys="false">
+                <variableName><![CDATA[MS Teams - Join URL]]></variableName>
+              </formVariableItemIEVO>
+              <formVariableItemIEVO seq="6" isRequired="false" isSys="false">
+                <variableName><![CDATA[MS Teams - Subject]]></variableName>
+              </formVariableItemIEVO>
+              <formVariableItemIEVO seq="7" isRequired="false" isSys="false">
+                <variableName><![CDATA[MS Teams - Dial-in Information URL]]></variableName>
+              </formVariableItemIEVO>
+              <formVariableItemIEVO seq="8" isRequired="false" isSys="false">
+                <variableName><![CDATA[MS Teams - Meeting ID]]></variableName>
+              </formVariableItemIEVO>
+              <formVariableItemIEVO seq="9" isRequired="false" isSys="false">
+                <variableName><![CDATA[MS Teams - Toll Free Number]]></variableName>
+              </formVariableItemIEVO>
+              <formVariableItemIEVO seq="10" isRequired="false" isSys="false">
+                <variableName><![CDATA[MS Teams - Toll Number]]></variableName>
+              </formVariableItemIEVO>
+            </formVariableItemIEVOs>
+          </formTemplateIEVO>
+          <broadcastTemplateIEVO>
+            <enableLifeSafety>false</enableLifeSafety>
+            <priority>NonPriority</priority>
+            <type>Polling</type>
+            <broadcastSettingsIEVO>
+              <voiceMailOption>MESSAGE_WITH_CONFIRMATION</voiceMailOption>
+            </broadcastSettingsIEVO>
+            <broadcastMessageIEVO>
+              <textMessage><![CDATA[{reference to notification.message.textMessage}]]></textMessage>
+              <title><![CDATA[Notification Triggered by xM]]></title>
+              <contentType>Text</contentType>
+              <useCustomEmail>true</useCustomEmail>
+              <rtfContent><![CDATA[This notification was triggered by the xMatters workflow. Before sending xMatters created the MS Teams meeting and inserted the connection information in this notification.<br /><br /><strong>Status:</strong> {Notification Status}<br /><strong>Sent:</strong> {Today's Date} {Current Time}<br /><br />
+<h3><strong><strong><strong><img src="https://manager.everbridge.net/proxy_rtf_image/RTFImage_62f6929c4d8421319b9abb6a.png" width="150" height="37" role="presentation" alt="" /></strong></strong></strong></h3>
+<hr /><strong>Subject:</strong> {MS Teams - Subject}<br /><strong>Toll Number:</strong> {MS Teams - Toll Number}<br /><strong>Toll Free Number:</strong> {MS Teams - Toll Free Number}<br /><strong>Conference ID:</strong> {MS Teams - Conference ID}<br /><a href="{MS Teams - Dial-in Information URL}" target="_blank" rel="noopener">Dial-in Information</a><br /><br /><a href="{MS Teams - Join URL}">Click to Join</a><br />]]></rtfContent>
+              <rtfEditorVersion>tinymce</rtfEditorVersion>
+              <conferenceBridgeId>0</conferenceBridgeId>
+              <questionaire>
+                <answers>
+                  <answer>
+                    <name>Joining</name>
+                    <quotaNum>0</quotaNum>
+                  </answer>
+                  <answer>
+                    <name>Dismiss</name>
+                    <quotaNum>0</quotaNum>
+                  </answer>
+                </answers>
+              </questionaire>
+              <useCustomSms>false</useCustomSms>
+            </broadcastMessageIEVO>
+          </broadcastTemplateIEVO>
+          <ignoreVariable>true</ignoreVariable>
+          <phaseDefinitions>
+            <phaseDefinition>
+              <id>1002</id>
+              <name>Updated</name>
+            </phaseDefinition>
+            <phaseDefinition>
+              <id>1003</id>
+              <name>Closed</name>
+            </phaseDefinition>
+          </phaseDefinitions>
+        </phaseTemplate>
+      </phaseTemplates>
+    </incidentTemplate>
+  </incidentTemplates>
+</IncidentTemplatePackage>
