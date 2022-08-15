@@ -78,7 +78,8 @@ In the example xMatters workflow that is triggered a MS Teams online meeting wil
 2. Go to the **ENDPOINT** tab and set the endpoint to the MS Teams endpoint you just configured
 3. Exit the step configuration by click the **Done** button
 4. Now save the flow changes by click the **Save** button in the top right corner.
----
+
+
 ### Everbridge - Configure Response Subscription
 1. Open the Org that the integration will be used with in the Everbridge console
 2. Go to **Settings -> Everbridge Open**
