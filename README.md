@@ -30,7 +30,9 @@ This integration allows you to trigger an xMatters workflow with an Everbridge r
 The Everbridge example incident template is configured so that it will not send a notification to the selected contacts, but will send a signal to the example xMatters workflow on the initial **New** incident phase using a response subscription.
 
 In the example xMatters workflow that is triggered a MS Teams online meeting will be created. The meeting information is then passed to the Everbridge incident as an update using variables defined in the incident template **Update | Closed** phase. This will trigger the actual Everbridge notification that will be sent out to the contacts containing the MS Teams meeting information.
+
 ---
+
 ## Installation
 
 ### xMatters - Setup/Configure Integration User
