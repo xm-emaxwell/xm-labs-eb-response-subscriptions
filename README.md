@@ -144,9 +144,24 @@ In the example xMatters workflow that is triggered a MS Teams online meeting wil
 ---
 
 ## Testing
-1. Launch an incident using the example template
+1. Launch an Everbridge incident using the example template
 2. The workflow should be triggered, an MS Teams online meeting created, then an incident update sent to Everbridge
 3. Now a new notification should be created for the incident containing the MS Teams meeting details.  This notification should be sent to the contacts selected in the New phase or at incident launch.
 
 ---
 ## Customize Integration
+
+### Adding or Removing Incident Template Variables
+If you want to add or remove variables in the Everbridge Incident template there are two updates that need to be made.
+1. Add or remove your variables in the incident template. In the example template they need to be added or removed in the **Update | Closed** phase.
+2. In the example xMatters flow go to the configuration of the **EB - Incident Update** step and add or remove variables from the **Variables** field.
+    #### :blue_book: NOTE
+    > You only need to include variables you want xMatters to pass a value for. If you make the variable required in the template then you need to include that variable and pass a value.
+
+
+### Separate Update and Closed phases
+If you want to separate the Update and Closed phase so you can customize them separately then do this.
+1. Separate your phases in the Everbridge incident template. *Manage option next to the phase tabs*
+2. In the xMatters flow you will need to have an **EB - Incident Update** step for the Update and Closed phases inserted in the flow logic where you like.
+3. Set one for an Update action and the other for a Close action.
+4. You will need to set the variables in each step to match the variables available in that phase. See the previous section [Adding or Removing Incident Template Variables](#adding-or-removing-incident-template-variables)
